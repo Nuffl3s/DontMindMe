@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+
+public class Speed {
+    public static void main (String[] args) {
+         
+        double AV = 60;
+        double AV1 = 50;
+        System.out.println("Average Speed: 50km/h to 60km/h");
+         
+        Scanner speedscan = new Scanner(System.in);
+
+        System.out.print("Enter your travel Distance: ");
+        double distance = speedscan.nextDouble();
+
+        System.out.print("Enter your travel Time(Hour): ");
+        double time =speedscan.nextDouble();
+        
+        double speed = distance/time; 
+        System.out.println("Your speed is: "+String.format("%.2f", speed)+"km/h");
+
+        if (speed<AV1){
+            System.out.print("Your speed "+String.format("%.2f", speed)+"km/h is too slow\n");
+        }
+        else if(speed>AV){
+            System.out.print("Your speed "+String.format("%.2f", speed)+"km/h is too fast");
+        }
+        else
+        System.out.print("Your speed "+String.format("%.2f", speed)+"km/h is just right");
+
+
+    }
+}

@@ -1,0 +1,61 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.speedloop;
+
+import java.util.*;
+public class Speedloop {
+
+    public static void main(String[] args) {
+    start:    
+        for (;;){
+
+        Scanner speed = new Scanner(System.in);
+        System.out.println("Enter the avarage Speed: ");
+        double avgs= speed.nextDouble();
+        System.out.println("Enter your Distance (Km): ");
+        double dis = speed.nextDouble();
+        System.out.println("Enter your Time Traveled (H): ");
+        double time = speed.nextDouble();
+    
+        System.out.println("The average speed is : "+String.format("%.2f",avgs));
+        double Speed = dis/time;
+            
+        if (Speed < avgs){
+            System.out.println("Speed is "+String.format("%.2f",Speed)+" You are travelling too slow");
+        }
+        else if (Speed > avgs){
+            System.out.println("Speed is "+String.format("%.2f",Speed)+" You are travelling too fast");
+        }
+        else if (Speed == avgs){
+            System.out.println("Speed is "+String.format("%.2f",Speed)+" You are travelling just right");
+        }
+        else
+        System.out.println("error");
+        
+       
+        for (;;){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Do you want to input another value? (Yes / No)");
+        String condi = input.nextLine();
+
+            if(condi.equalsIgnoreCase("Yes")){
+                continue start;
+            }
+            
+            else if (condi.equalsIgnoreCase("No")){
+                System.out.println("Thank you for your time");
+                break start;
+            }
+
+            else {
+                System.out.println("Error Terminating");
+                break start;
+                    }
+                }
+            }
+            
+        }
+    }

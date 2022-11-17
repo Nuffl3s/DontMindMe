@@ -1,0 +1,155 @@
+import java.util.*;
+
+public class OOPmidtest {
+    
+    public static void main(String[] args){
+        Scanner ch = new Scanner(System.in);
+        System.out.println("Choice what problem you want to answer: ");
+        int ch1 = ch.nextInt();
+
+        if (ch1==1){
+            GreatestNum();
+        }
+        else if (ch1==2){
+            Factorial();
+        }
+        else if (ch1==3){
+            Oddsum();
+        }
+        else if (ch1==4){
+            cointoss();
+        }
+        }
+
+    public static void GreatestNum(){
+        Scanner gn = new Scanner(System.in);
+        int z = 0;
+        while (z< 1){
+        
+        System.out.println("Enter your first number: ");
+        int fn = gn.nextInt();
+        System.out.println("Enter your second number: ");
+        int sn = gn.nextInt();
+        System.out.println("Enter your third number: ");
+        int tn = gn.nextInt();
+
+        if (fn > sn && fn > tn){
+            System.out.println(fn + " is your greatest number");
+        }
+        else if (sn > fn && sn >tn){
+            System.out.println(sn + " is your greatest number");
+        }
+        else if (tn > fn && tn >sn){
+            System.out.println(tn + " is your geatest number");
+        }
+        Scanner con = new Scanner(System.in);
+        System.out.println("Do you want to enter again?? (Yes or No)");
+        String yn = con.nextLine();
+
+        if (yn.equalsIgnoreCase("yes")){
+            z = 0;
+        }
+        else if(yn.equalsIgnoreCase("no")){
+            z = 1;
+        }
+        }
+    }
+    public static void Factorial(){
+        Scanner ft = new Scanner(System.in);
+        int z=0;
+        while(z<1){
+            System.out.println("Enter your number of your factorial: ");
+            int ftr = ft.nextInt();
+            int fact = 1; 
+            
+            for (int x=1;x<=ftr;){
+                fact *= x ;
+                System.out.print(fact + " * ");
+                x++;
+            }
+        Scanner con = new Scanner(System.in);
+        System.out.println("Do you want to enter again?? (Yes or No)");
+        String yn = con.nextLine();
+
+        if (yn.equalsIgnoreCase("yes")){
+            z = 0;
+        }
+        else if(yn.equalsIgnoreCase("no")){
+            z = 1;
+        }
+        }
+    }
+    public static void Oddsum(){
+        int z = 0;
+        Scanner od = new Scanner(System.in);
+        while(z<1){
+
+            System.out.println("Enter you first digit: ");
+            int fd=od.nextInt();
+            System.out.println("Enter your second digit: ");
+            int sd=od.nextInt();
+            
+            int sum = 0;
+            for(int x=fd;x<sd;x++){
+               
+                if (x %2!=0){
+                System.out.println(x + " ");
+                 sum = sum + x;
+               }
+            }
+            System.out.println("The sum is " + sum);
+        Scanner con = new Scanner(System.in);
+        System.out.println("Do you want to enter again?? (Yes or No)");
+        String yn = con.nextLine();
+
+        if (yn.equalsIgnoreCase("yes")){
+            z = 0;
+        }
+        else if(yn.equalsIgnoreCase("no")){
+            z = 1;
+        }
+        }
+    }
+    public static void cointoss(){
+        Scanner toss = new Scanner(System.in);
+        int z = 0;
+        while(z<1){
+            int head = 0;
+            int tail = 0;
+            for (int t=0; t<8; t++){
+                System.out.println("Toss: ");
+                char ts = toss.next().charAt(0);
+
+                if (ts=='h'){
+                    head++;
+                }
+                else if(ts == 'H'){
+                 head++;
+                }
+                else if(ts == 't'){
+                    tail++;
+                }
+                else if(ts == 'T'){
+                    tail++;
+                }
+                else
+                System.out.println("Invalid");
+            }
+            System.out.println("Number of head tossed: "+ head);
+            System.out.println("Number of tails tossed: "+ tail);
+            System.out.println("Percentage og heads: "+(float)head/8*100);
+            System.out.println("Percentage og tails: "+(float)tail/8*100);
+        Scanner con = new Scanner(System.in);
+        System.out.println("Do you want to enter again?? (Yes or No)");
+        String yn = con.nextLine();
+
+        if (yn.equalsIgnoreCase("yes")){
+            z = 0;
+        }
+        else if(yn.equalsIgnoreCase("no")){
+            z = 1;
+        }
+        }
+    }
+}
+
